@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Índice — Sitio con 30 páginas</title>
+  <link rel="stylesheet" href="index.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <h1>Índice del sitio</h1>
+      <p class="subtitle">Haz click en cualquiera de las 30 páginas para abrirla.</p>
+    </div>
+  </header>
+
+  <main class="container">
+    <nav aria-label="Lista de páginas">
+      <ul class="pages-grid">
+        <li><a href="html/pagina_3.html">Página 3</a></li>
+        <li><a href="html/pagina_4.html">Página 4</a></li>
+        <li><a href="html/pagina_6.html">Página 6</a></li>
+        <li><a href="html/pagina_10.html">Página 10</a></li>
+        <li><a href="html/pagina_11.html">Página 11</a></li>
+        <li><a href="html/pagina_12.html">Página 12</a></li>
+        <li><a href="html/pagina_14.html">Página 14</a></li>
+        <li><a href="html/pagina_15.html">Página 15</a></li>
+        <li><a href="html/pagina_22.html">Página 22</a></li>
+        <li><a href="html/pagina_33.html">Página 33</a></li>
+        <li><a href="html/pagina_38.html">Página 38</a></li>
+        <li><a href="html/pagina_40.html">Página 40</a></li>
+        <li><a href="html/pagina_41.html">Página 41</a></li>
+        <li><a href="html/pagina_45.html">Página 45</a></li>
+        <li><a href="html/pagina_50.html">Página 50</a></li>
+    </ul>
+    </nav>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <small>© <span id="year"></span> Mi Sitio — Todos los derechos reservados</small>
+    </div>
+  </footer>
+
+  <script>
+    // Inserta año actual en el footer
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
