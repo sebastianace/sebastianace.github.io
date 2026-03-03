@@ -1,0 +1,145 @@
+/* 1. RESET Y CONFIGURACIÓN BASE */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    overflow-x: hidden; /* Evita el scroll horizontal */
+}
+
+main {
+    width: 100%;
+    min-height: 100vh;
+    background-color: #ffffff;
+    display: flex;
+    flex-wrap: wrap; /* Permite que los elementos bajen en móviles */
+    position: relative;
+    padding-bottom: 120px; /* Espacio para las tarjetas de abajo */
+}
+
+/* 2. CONTENEDOR IZQUIERDO */
+#contenido {
+    background-color: #f2f2f2;
+    width: 50%; /* Cambiamos vw por % para estabilidad */
+    min-height: 80vh;
+    border-radius: 0 0 400px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 60px 5% 60px 10%; /* Padding proporcional */
+    z-index: 2;
+}
+
+#titulo h1 {
+    font-family: "Lato", sans-serif;
+    font-size: clamp(32px, 4vw, 35px);
+    font-weight: 900;
+    line-height: 1.1;
+    color: #333;
+}
+
+b { color: #437223; font-weight: 900; }
+
+#parrafo {
+    margin: 25px 0;
+    font-family: "Lato", sans-serif;
+    font-size: 16px;
+    color: #555;
+    max-width: 400px;
+}
+
+/* 3. STATS Y BOTÓN */
+#stats {
+    display: flex;
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.stat-item h3 {
+    font-family: "Lato", sans-serif;
+    font-size: 24px;
+    border-bottom: 3px solid #437223;
+    display: inline-block;
+}
+
+.stat-item p { font-size: 12px; color: #777; margin-top: 5px; }
+
+#boton {
+    background-color: #437223;
+    width: 220px;
+    height: 55px;
+    border: none;
+    border-radius: 30px;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+#boton a {
+    text-decoration: none;
+    color: white;
+    font-family: "Lato", sans-serif;
+    font-weight: 700;
+    display: block;
+}
+
+#boton:hover { background-color: #355a1c; transform: scale(1.05); }
+
+/* 4. SECCIÓN DERECHA (IMÁGENES) */
+#contenido_2 {
+    width: 50%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#imagen {
+    width: 90%; /* Ahora depende de su contenedor derecho */
+    max-width: 600px;
+    height: auto;
+    z-index: 1;
+}
+
+#dog-paw2 {
+    width: 100px;
+    position: absolute;
+    right: 5%;
+    top: 5%;
+    z-index: 0;
+}
+
+/* 5. TARJETAS INFERIORES */
+#cards {
+    width: 90%;
+    position: absolute;
+    left: 5%;
+    bottom: 20px;
+    display: flex;
+    gap: 15px;
+    z-index: 10;
+}
+
+.cardclass {
+    background: white;
+    padding: 15px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    flex: 1;
+    border: 1px solid #000000;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.cardclass img { width: 50px; height: 50px; border-radius: 50%; margin-right: 15px; }
+
+.cartas p { font-size: 11px; font-family: "Lato", sans-serif; }
+
+/* 6. MEDIA QUERIES (RESPONSIVE) */
+@media (max-width: 1024px) {
+    #contenido { width: 100%; border-radius: 0 0 100px 0; min-height: auto; padding: 60px 10%; }
+    #contenido_2 { width: 100%; padding: 40px 0; }
+    #imagen { width: 70%; }
+    #cards { position: relative; flex-direction: column; left: 0; width: 80%; margin: 20px auto; bottom: 0; }
+}

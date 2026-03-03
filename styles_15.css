@@ -1,0 +1,193 @@
+body {
+  margin: 0;
+  font-family: "Georgia", serif;
+  background: #f9f9f9;
+  color: #222;
+}
+
+.adventure {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-items: center;
+  gap: 2rem;
+  padding: 3rem;
+  max-width: 1200px;
+  margin: auto;
+  min-height: 100vh;
+}
+
+/* -------- Columna izquierda -------- */
+.left {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.left h1 {
+  font-size: clamp(1.8rem, 3vw, 2.8rem);
+  line-height: 1.2;
+  margin-bottom: 1rem;
+  font-weight: 400;
+}
+
+.left p {
+  font-size: clamp(0.85rem, 1vw, 1rem);
+  margin-bottom: 1.5rem;
+  color: #444;
+  line-height: 1.6;
+}
+
+button {
+  background: #2e6a4a;
+  color: #fff;
+  border: none;
+  border-radius: 25px;
+  padding: 0.8rem 1.8rem;
+  font-size: 0.95rem;
+  cursor: pointer;
+  margin-bottom: 2rem;
+  font-family: "Georgia", serif;
+}
+
+button:hover {
+  background: #244f37;
+}
+
+.small-images {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.small-images img {
+  width: clamp(80px, 8vw, 130px);
+  height: clamp(120px, 12vw, 195px);
+  border-radius: 60px;
+  object-fit: cover;
+}
+
+/* -------- Estrellas decorativas -------- */
+.star {
+  font-size: clamp(5rem, 2vw, 5rem);
+  color: #1a2e1a;
+  display: inline-block;
+  line-height: 1;
+}
+
+.star-left {
+  position: absolute;
+  top: clamp(2px, 8vw, 10px);
+  right: clamp(10px, 3vw, 40px);
+}
+
+.star-right {
+  display: block;
+  margin: 10px 12px 10px 0;
+  font-size: clamp(1.2rem, 2vw, 1.8rem);
+}
+
+/* -------- Imagen central -------- */
+.center {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.big-img {
+  width: 100%;
+  max-width: 360px;
+  height: auto;
+  display: block;
+  margin: auto;
+  object-fit: contain;
+}
+
+/* -------- Columna derecha -------- */
+.right {
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.right .small-images {
+  justify-content: flex-start;
+  margin-bottom: 0.5rem;
+}
+
+.right .oval {
+  width: clamp(80px, 8vw, 130px);
+  height: clamp(120px, 12vw, 195px);
+  border-radius: 60px;
+  object-fit: cover;
+}
+
+.right p {
+  font-size: clamp(0.82rem, 1vw, 0.98rem);
+  color: #444;
+  margin: 0.5rem 0 1.5rem 0;
+  line-height: 1.6;
+}
+
+.right h2 {
+  font-size: clamp(1.6rem, 3vw, 2.5rem);
+  line-height: 1.3;
+  font-weight: 400;
+}
+
+/* -------- Responsive: Tablet -------- */
+@media (max-width: 900px) {
+  .adventure {
+    grid-template-columns: 1fr;
+    text-align: center;
+    padding: 2rem;
+  }
+
+  .left,
+  .right {
+    align-items: center;
+    text-align: center;
+  }
+
+  .star-left {
+    position: static;
+    display: block;
+    margin: 0.5rem auto;
+  }
+
+  .small-images {
+    justify-content: center;
+  }
+
+  .right .small-images {
+    justify-content: center;
+  }
+
+  .big-img {
+    max-width: 280px;
+  }
+}
+
+/* -------- Responsive: Móvil -------- */
+@media (max-width: 560px) {
+  .left h1 {
+    font-size: 2rem;
+  }
+
+  .right h2 {
+    font-size: 1.8rem;
+  }
+
+  .big-img {
+    max-width: 230px;
+  }
+
+  .small-images img,
+  .right .oval {
+    width: 85px;
+    height: 130px;
+    border-radius: 45px;
+  }
+}

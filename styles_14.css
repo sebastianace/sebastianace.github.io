@@ -1,0 +1,215 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ================= CONTENEDOR PRINCIPAL ================= */
+.container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1900px;
+  min-height: 100vh;
+  padding: 60px 8vw;
+  gap: 40px;
+  position: relative;
+}
+
+/* ================= COLUMNA IZQUIERDA ================= */
+.left-col {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  flex: 1;
+  gap: 28px;
+  z-index: 1;
+}
+
+/* ================= TÍTULO ================= */
+h1 {
+  font-size: clamp(1rem, 5vw, 4rem);
+  color: #2b2b2b;
+  font-weight: 800;
+  line-height: 1.1;
+}
+
+/* ================= PÁRRAFO ================= */
+.p {
+  font-size: clamp(0.9rem, 1.2vw, 1.4rem);
+  color: #444;
+  line-height: 1.6;
+  max-width: 480px;
+}
+
+/* ================= BOTÓN ================= */
+button {
+  background-color: #ebd65e;
+  color: #333;
+  padding: 14px 32px;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  font-size: clamp(0.85rem, 20vw, 1.1rem);
+  font-weight: 100;
+  transition: background-color 0.3s ease;
+  white-space: nowrap;
+}
+
+button:hover {
+  background-color: #e6c200;
+}
+
+/* ================= STATS ================= */
+.stats-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  background-color: #2b2114;
+  padding: 40px 24px;
+  border-radius: 14px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  max-width: 620px;
+}
+
+.stat {
+  color: #fff;
+  text-align: center;
+  flex: 1;
+  font-size: clamp(1rem, 1.5vw, 1.5rem);
+  font-weight: 700;
+}
+
+.stat span {
+  font-size: clamp(0.6rem, 0.8vw, 0.85rem);
+  color: #ccc;
+  display: block;
+  font-weight: 400;
+  margin-top: 4px;
+}
+
+.stat img {
+  width: clamp(50px, 5vw, 80px);
+  height: auto;
+  display: block;
+  margin: 4px auto;
+}
+
+/* ================= IMAGEN DERECHA ================= */
+.right-col {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  position: relative;
+  z-index: 2;
+  left: -190px;
+}
+
+.main-image {
+  width: 100%;
+  max-width: 650px;
+  height: auto;
+  object-fit: contain;
+}
+
+/* ================= RESPONSIVE: Laptop pequeño (max 1100px) ================= */
+@media (max-width: 1100px) {
+  .container {
+    padding: 50px 5vw;
+    gap: 20px;
+  }
+
+  h1 {
+    font-size: clamp(1.8rem, 4vw, 3.5rem);
+  }
+
+  .main-image {
+    max-width: 420px;
+  }
+}
+
+/* ================= RESPONSIVE: Tablet (max 860px) ================= */
+@media (max-width: 860px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+    padding: 50px 6vw;
+    gap: 30px;
+    min-height: auto;
+  }
+
+  .left-col {
+    align-items: center;
+    text-align: center;
+    width: 100%;
+  }
+
+  h1 {
+    font-size: clamp(2rem, 6vw, 3.5rem);
+    text-align: center;
+  }
+
+  .p {
+    text-align: center;
+    font-size: clamp(0.95rem, 2vw, 1.2rem);
+  }
+
+  .stats-container {
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .right-col {
+    width: 100%;
+  }
+
+  .main-image {
+    max-width: 380px;
+    width: 70%;
+  }
+}
+
+/* ================= RESPONSIVE: Móvil (max 560px) ================= */
+@media (max-width: 560px) {
+  .container {
+    padding: 40px 4vw;
+  }
+
+  h1 {
+    font-size: clamp(1.6rem, 8vw, 2.5rem);
+  }
+
+  .p {
+    font-size: 0.95rem;
+  }
+
+  button {
+    width: 100%;
+    max-width: 280px;
+    text-align: center;
+  }
+
+  .stats-container {
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .main-image {
+    width: 85%;
+    max-width: 280px;
+  }
+}

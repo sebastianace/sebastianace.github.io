@@ -1,0 +1,119 @@
+:root {
+  --bg-dark: #2a2a2a;
+  --pink: #e89aa6;
+  --blue: #4fb4e6;
+  --green: #56c596;
+  --text-light: #f1f1f1;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  background: var(--bg-dark);
+  color: var(--text-light);
+}
+
+.creative {
+  background: var(--bg-dark);
+  padding: 60px 20px;
+  display: flex;
+  justify-content: center;
+}
+.creative__inner {
+  width: min(1200px, 95vw);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+/* Texto */
+.copy h1 {
+  font-weight: 800;
+  font-size: clamp(2.4rem, 6vw, 6rem); /* ahora escala */
+  line-height: 1.2;
+  margin-bottom: 18px;
+}
+.copy .pink { color: var(--pink); }
+.copy .blue { color: var(--blue); }
+.copy .green { color: var(--green); }
+
+.copy p {
+  color: #cfcfcf;
+  margin-bottom: 22px;
+  line-height: 1.6;
+  max-width: 420px;
+  font-size: clamp(1rem, 2vw, 1.2rem); /* escalable */
+}
+
+.btn {
+  background: #fff;
+  color: #000;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 999px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+}
+.btn:hover {
+  background: #e1e1e1;
+  transform: scale(1.05);
+}
+
+/* Grid */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+}
+.grid img {
+  width: 100%;
+  border-radius: 20px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease;
+}
+.grid img:hover {
+  transform: scale(1.05);
+}
+
+/* Tablets */
+@media (max-width: 1100px) {
+  .creative__inner {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    text-align: center;
+  }
+  .copy p {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Móviles grandes */
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Móviles pequeños */
+@media (max-width: 480px) {
+  .creative {
+    padding: 40px 10px;
+  }
+  .grid {
+    grid-template-columns: 1fr;
+  }
+  .copy h1 {
+    font-size: clamp(2rem, 8vw, 3rem);
+  }
+}

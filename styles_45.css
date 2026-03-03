@@ -1,0 +1,205 @@
+.grid-layout {
+    display: grid;
+    grid-template-columns: repeat(4, 0.4fr);
+    grid-template-rows: repeat(3, 0.4fr);
+    grid-template-areas:
+        "hero hero card1 card1"
+        "hero hero card1 card1"
+        "card2 card3 card1 card1";
+    margin-top: 60px;
+    height: 100vh;
+}
+
+.hero-section {
+    grid-area: hero;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.card {
+    position: relative;
+    overflow: hidden;
+}
+
+.card-1 {
+    grid-area: card1;
+}
+
+.card-2 {
+    grid-area: card2;
+}
+
+.card-3 {
+    grid-area: card3;
+}
+
+.hero-bg-img,
+.card-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.hero-title {
+    position: absolute;
+    top: 13%;
+    left: 10%;
+    color: #fff;
+    font-family: "Bitter", serif;
+    font-size: 3.2rem;
+    font-weight: bolder;
+    max-width: 60%;
+}
+
+.hero-description {
+    position: absolute;
+    top: 47%;
+    left: 10%;
+    font-family: "Space Mono", monospace;
+    color: #fff;
+    max-width: 70%;
+    font-size: 1.2rem;
+    line-height: 1.5;
+}
+
+.cta-button {
+    position: absolute;
+    top: 70%;
+    left: 10%;
+    background: #fff;
+    font-family: "Space Mono", monospace;
+    color: #000000;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 24px;
+    cursor: pointer;
+}
+
+
+
+
+
+
+@media screen and (min-width: 1440px) {
+    .grid-layout {
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(3, 400px);
+    }
+
+    .hero-title {
+        font-size: 4rem;
+    }
+
+    .hero-description {
+        font-size: 1.4rem;
+    }
+
+    .card-number {
+        font-size: 4rem;
+    }
+
+    .card-text {
+        font-size: 1.2rem;
+    }
+}
+
+@media screen and (max-width: 1068px) {
+    .grid-layout {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3, 300px);
+        grid-template-areas:
+        "hero hero"
+        "card1 card1"
+        "card2 card3";
+    }
+
+    .hero-title {
+        font-size: 2.5rem;
+        max-width: 80%;
+    }
+
+    .hero-description {
+        font-size: 1rem;
+        max-width: 80%;
+    }
+
+    .card-number {
+        font-size: 2.5rem;
+    }
+
+    .card-text {
+        font-size: 1rem;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .grid-layout {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        grid-template-areas:
+        "hero"
+        "card1"
+        "card2"
+        "card3";
+    }
+
+    .hero-section {
+        min-height: 25vh;
+    }
+
+    .hero-title {
+        font-size: 2rem;
+        top: 8%;
+        left: 5%;
+        max-width: 90%;
+    }
+
+    .hero-description {
+        font-size: 1rem;
+        top: 40%;
+        left: 5%;
+        max-width: 90%;
+    }
+
+    .cta-button {
+        top: 65%;
+        left: 5%;
+        padding: 12px 20px;
+        font-size: 1rem;
+    }
+}
+
+@media screen and (max-width: 457px) {
+    .hero-title {
+        font-size: 1.6rem;
+        top: 6%;
+        left: 5%;
+        max-width: 90%;
+    }
+
+    .hero-description {
+        font-size: 0.85rem;
+        top: 38%;
+        left: 5%;
+        max-width: 90%;
+    }
+
+    .cta-button {
+        top: 75%;
+        left: 5%;
+        padding: 8px 16px;
+        font-size: 0.85rem;
+    }
+
+    .card-number {
+        font-size: 1.8rem;
+    }
+
+    .card-text {
+        font-size: 0.75rem;
+    }
+}
